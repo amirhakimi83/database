@@ -1,0 +1,9 @@
+CREATE TABLE Message (
+    MessageID INT AUTO_INCREMENT PRIMARY KEY,
+    ChatID INT,
+    SenderUserID INT,
+    Content TEXT,
+    Timestamp DATETIME DEFAULT CURRENT_TIMESTAMP,
+    FOREIGN KEY (ChatID) REFERENCES Chat(ChatID),
+    FOREIGN KEY (SenderUserID) REFERENCES UserAccount(UserID)
+);

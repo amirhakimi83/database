@@ -1,0 +1,7 @@
+CREATE TABLE Chat (
+    ChatID INT AUTO_INCREMENT PRIMARY KEY,
+    UserID1 INT,
+    UserID2 INT,
+    FOREIGN KEY (UserID1) REFERENCES UserAccount(UserID),
+    FOREIGN KEY (UserID2) REFERENCES UserAccount(UserID)
+);

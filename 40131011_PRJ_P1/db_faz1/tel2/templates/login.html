@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="fa">
+<head>
+<meta charset="UTF-8">
+<title>ورود به تلگرام</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #f0f0f0;
+        margin: 0;
+        padding: 0;
+    }
+  .container {
+        width: 300px;
+        padding: 16px;
+        background-color: white;
+        border-radius: 4px;
+        box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        margin: 100px auto;
+    }
+    h2 {
+        text-align: center;
+        color: #333;
+    }
+    input[type="text"], input[type="password"] {
+        width: 100%;
+        padding: 12px 20px;
+        margin: 8px 0;
+        display: inline-block;
+        border: 1px solid #ccc;
+        box-sizing: border-box;
+    }
+    button {
+        background-color: #008CBA; /* Blue */
+        color: white;
+        padding: 14px 20px;
+        margin: 8px 0;
+        border: none;
+        cursor: pointer;
+        width: 100%;
+        opacity: 0.9;
+    }
+    button:hover {
+        opacity:1;
+    }
+</style>
+</head>
+<body>
+
+<div class="container">
+    <h2>welcome to telegram</h2>
+
+    {% if session.get('error_message') %}
+        <div style="color: red;">{{ session['error_message'] }}</div>
+    {% endif %}
+
+    <form action="/login" method="post">
+        <label for="phone_number"><b>phone number</b></label>
+        <input type="text" placeholder="phone number" name="phone_number" required>
+
+        <label for="psw"><b>password</b></label>
+        <input type="password" placeholder="password" name="psw" required>
+
+        <button>login</button>
+
+    </form>
+</div>
+
+</body>
+</html>
